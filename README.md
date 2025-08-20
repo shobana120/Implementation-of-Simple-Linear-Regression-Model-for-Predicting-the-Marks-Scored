@@ -20,10 +20,10 @@ To write a program to implement the SVM For Spam Mail Detection.
 
 ## Program:
 ```
-/*
+*/
 Program to implement the SVM For Spam Mail Detection..
-Developed by: R Raihaan Ahmed 
-RegisterNumber:  212224040260
+Developed by: B SHOBANA
+RegisterNumber:  212224230262
 */
 ```
 ```py
@@ -60,11 +60,13 @@ accuracy
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/0f53fc04-573e-443a-8752-dd842d8816f0)
-![image](https://github.com/user-attachments/assets/e04694a1-6fe6-41fc-ae59-18e13170a154)
-![image](https://github.com/user-attachments/assets/2498303a-4291-49ac-a402-45f21c9bc86b)
-![image](https://github.com/user-attachments/assets/baaeb365-e6d1-44b5-8f4d-634aa0347643)
-![image](https://github.com/user-attachments/assets/b26d2319-16d1-4102-bee8-41344d91c115)
+<img width="320" height="569" alt="image" src="https://github.com/user-attachments/assets/a021a621-3e57-4688-90a5-3c6e522e5b4c" />
+<img width="320" height="569" alt="image" src="https://github.com/user-attachments/assets/1c91e4c8-1070-49fb-81cb-e504ff8b605d" />
+<img width="320" height="569" alt="image" src="https://github.com/user-attachments/assets/48d5e626-a0e6-40fb-bd77-c88280d3a0f8" />
+<img width="776" height="591" alt="image" src="https://github.com/user-attachments/assets/2071eddf-3225-459a-a09b-7d39791dc06e" />
+![Uploading image.png…]()
+![Uploading image.png…]()
+
 
 
 
