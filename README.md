@@ -1,79 +1,89 @@
-# Implementation-of-SVM-For-Spam-Mail-Detection
+# Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored
 
 ## AIM:
-To write a program to implement the SVM For Spam Mail Detection.
+To write a program to predict the marks scored by a student using the simple linear regression model.
 
 ## Equipments Required:
 1. Hardware – PCs
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Start the Program.
-2. Import the necessary packages.
-3. Read the given csv file and display the few contents of the data.
-4. Assign the features for x and y respectively.
-5. Split the x and y sets into train and test sets.
-6. Convert the Alphabetical data to numeric using CountVectorizer.
-7. Predict the number of spam in the data using SVC (C-Support Vector Classification) method of SVM (Support vector machine) in sklearn library.
-8. Find the accuracy of the model. 9.End the Program.
-
+1.Import the standard Libraries.
+2.Set variables for assigning dataset values.
+3.Import linear regression from sklearn.
+4.Assign the points for representing in the graph.
+5.Predict the regression for marks by using the representation of the graph.
+6.Compare the graphs and hence we obtained the linear regression for the given datas.
 
 ## Program:
 ```
-*/
-Program to implement the SVM For Spam Mail Detection..
-Developed by: B SHOBANA
-RegisterNumber:  212224230262
-*/
-```
-```py
-import pandas as pd
+/*
+Program to implement the simple linear regression model for predicting the marks scored.
+Developed by: B.shobana
+RegisterNumber: 212224230262
+        import pandas as pd
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from sklearn.model_selection import train_test_split
+        from sklearn.linear_model import LinearRegression
+        from sklearn.metrics import mean_squared_error, mean_absolute_error
+        
+        # Load dataset
+        df = pd.read_csv("student_scores.csv")
+        
+        # Splitting into features (Hours) and target (Scores)
+        X = df[['Hours']]
+        Y = df['Scores']
+        
+        # Splitting the dataset into training and testing sets
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=1/3, random_state=0)
+        
+        # Creating and training the Linear Regression model
+        regressor = LinearRegression()
+        regressor.fit(X_train, Y_train)
+        
+        # Predicting test set results
+        Y_pred = regressor.predict(X_test)
+        
+        # Visualizing the Training set
+        plt.scatter(X_train, Y_train, color="blue")
+        plt.plot(X_train, regressor.predict(X_train), color="black")
+        plt.title("Hours vs Scores (Training Set)")
+        plt.xlabel("Hours Studied")
+        plt.ylabel("Marks Scored")
+        plt.show()
+        
+        # Visualizing the Test set
+        plt.scatter(X_test, Y_test, color="yellow")
+        plt.plot(X_test, Y_pred, color="black")
+        plt.title("Hours vs Scores (Test Set)")
+        plt.xlabel("Hours Studied")
+        plt.ylabel("Marks Scored")
+        plt.show()
+        
+        # Model Evaluation
+        mse = mean_squared_error(Y_test, Y_pred)
+        mae = mean_absolute_error(Y_test, Y_pred)
+        rmse = np.sqrt(mse)
+        
+        print(f"MSE  = {mse:.2f}")
+        print(f"MAE  = {mae:.2f}")
+        print(f"RMSE = {rmse:.2f}")
 
-data=pd.read_csv("spam.csv",encoding="Windows-1252")
-
-data.head()
-
-data.info()
-
-data.isnull().sum()
-
-x=data["v1"].values
-y=data["v2"].values
-
-from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
-
-from sklearn.feature_extraction.text import CountVectorizer
-cv=CountVectorizer()
-x_train=cv.fit_transform(x_train)
-x_test=cv.transform(x_test)
-
-from sklearn.svm import SVC
-svc=SVC()
-svc.fit(x_train,y_train)
-y_pred=svc.predict(x_test)
-y_pred
-
-from sklearn import metrics
-accuracy=metrics.accuracy_score(y_test,y_pred)
-accuracy
 ```
 
 ## Output:
-<img width="320" height="569" alt="image" src="https://github.com/user-attachments/assets/a021a621-3e57-4688-90a5-3c6e522e5b4c" />
-<img width="320" height="569" alt="image" src="https://github.com/user-attachments/assets/1c91e4c8-1070-49fb-81cb-e504ff8b605d" />
-<img width="320" height="569" alt="image" src="https://github.com/user-attachments/assets/48d5e626-a0e6-40fb-bd77-c88280d3a0f8" />
-<img width="776" height="591" alt="image" src="https://github.com/user-attachments/assets/2071eddf-3225-459a-a09b-7d39791dc06e" />
-![Uploading image.png…]()
-![Uploading image.png…]()
+
+<img width="464" height="547" alt="Screenshot 2025-09-03 154032" src="https://github.com/user-attachments/assets/5e2c07c0-ab0c-4015-911a-e698055edb6d" />
 
 
 
+<img width="834" height="580" alt="Screenshot 2025-09-03 154041" src="https://github.com/user-attachments/assets/67510f8a-ff44-4711-9a8e-18450dbfd9fe" />
 
 
 
-
+<img width="749" height="671" alt="Screenshot 2025-09-03 154057" src="https://github.com/user-attachments/assets/1b0e58ca-e30a-49fe-b61f-5959c27a326b" />
 
 
 ## Result:
-Thus the program to implement the SVM For Spam Mail Detection is written and verified using python programming.
+Thus the program to implement the simple linear regression model for predicting the marks scored is written and verified using python programming.
